@@ -10,14 +10,14 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find(params[:id])
+	   @post = Post.find(params[:id])
 	end
 
 	def create
 		@post = Post.new(post_params)
 
 		if @post.save
-			redirect_to @post
+			redirect_to posts_path
 		else
 			render 'new'
 		end
