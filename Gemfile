@@ -19,6 +19,8 @@ gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 gem 'activeadmin'
 #Gema cancancan
 gem 'cancancan'
+#Gema chartkick para graficos
+gem 'chartkick'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

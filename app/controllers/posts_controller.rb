@@ -34,11 +34,11 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 
 		if @post.update(params[:post].permit(:title, :body))
-			redirect_to @post
+		    redirect_to @post
 		else
-			render 'edit'
+			       render 'edit'
 		end
-	end
+  end
 
 	def destroy
 
