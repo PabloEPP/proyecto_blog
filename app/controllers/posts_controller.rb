@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :authenticate_user!, only: [:new, :create]
+  #before_action :authenticate_user!, except: [:index, :show]
+  #before_action :authenticate_user!, only: [:new, :create]
+  load_and_authorize_resource
 
   def index
 		@posts = Post.all.order('created_at DESC')
@@ -40,6 +41,7 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
+
 		@post = Post.find(params[:id])
 		@post.destroy
 
