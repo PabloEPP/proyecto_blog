@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
 		@posts = Post.all.order('created_at DESC')
@@ -15,6 +16,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+    @post.user = current_user
 
 		if @post.save
 			redirect_to posts_path
