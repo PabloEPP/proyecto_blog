@@ -34,6 +34,7 @@ ActiveAdmin.register Post do
       input :title
       input :body
       end
-    end
-  filter :created_at
+    actions
   end
+  filter :created_at
+end
