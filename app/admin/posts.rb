@@ -12,5 +12,29 @@ ActiveAdmin.register Post do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+  permit_params :user_id, :body
+
+  index do
+    column :d
+    column :author do |post|
+      post.user.email
+    end
+      column :title
+      column :comments do |post|
+        post.comments.count
+      end
+    actions
+  end
+  form do |f|
+    inputs 'Agregar Nuevo Post' do
+      f.input :user_id,
+      label: 'Author',
+      as: :select,
+      collection: User.pluck(:email, :id)
+      input :title
+      input :body
+      end
+    actions
+  end
+  filter :created_at
 end

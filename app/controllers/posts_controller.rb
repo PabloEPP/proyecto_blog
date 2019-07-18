@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  #before_action :authenticate_user!, except: [:index, :show]
+  #before_action :authenticate_user!, only: [:new, :create]
+  load_and_authorize_resource
 
   def index
 		@posts = Post.all.order('created_at DESC')
@@ -10,14 +12,15 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find(params[:id])
+	   @post = Post.find(params[:id])
 	end
 
 	def create
 		@post = Post.new(post_params)
+    @post.user = current_user
 
 		if @post.save
-			redirect_to @post
+			redirect_to posts_path
 		else
 			render 'new'
 		end
@@ -31,13 +34,14 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 
 		if @post.update(params[:post].permit(:title, :body))
-			redirect_to @post
+		    redirect_to @post
 		else
-			render 'edit'
+			       render 'edit'
 		end
-	end
+  end
 
 	def destroy
+
 		@post = Post.find(params[:id])
 		@post.destroy
 
