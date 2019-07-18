@@ -1,7 +1,7 @@
-<h1>Este es el index</h1>
+<h1>Blog Cajón del Maipo</h1>
   <% @posts.each do |post| %>
     <div class="post_wrapper">
-      <h2 class="title"><%= link_to post.title, post %></h2>
+      <h3 class="title"><%= link_to post.title, post %></h3>
       <p class="date" ><%= post.created_at.strftime("%B, %d, %Y") %></p>
     <div>
 <%end%>
