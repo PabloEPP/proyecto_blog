@@ -17,7 +17,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 #Gema Active Admin#
 gem 'activeadmin'
-gem 'cancancan'
 #Gema cancancan
 gem 'cancancan'
 #Gema chartkick para graficos
