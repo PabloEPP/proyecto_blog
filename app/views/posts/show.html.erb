@@ -1,4 +1,4 @@
-<div class="card" style="width: 18rem;">
+<div class="jumbotron"">
 	<h1 class="title"><%= @post.title %></h1>
 	<p><strong>Usuario: <%= @post.user.name %></strong></p>
 	<p class="date">
@@ -8,7 +8,7 @@
 		  		<%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>
 				<% end %>
 	</p>
-	<div class="card-body"><%= @post.body %></div>
+	<div class="card"><%= @post.body %></div>
 
 
 	<h2 class="card"><%= @post.comments.count %> Comentarios:</h2>
