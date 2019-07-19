@@ -22,3 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+* Link a de la app https://lit-spire-57374.herokuapp.com/
