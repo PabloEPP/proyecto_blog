@@ -32,7 +32,7 @@
         <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<%= about_path %>">About</a>
+        <a class="nav-link" href="<%= about_path %>">Nosotros</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -55,12 +55,25 @@
   </div>
 </nav>
 
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <div class = "container" >
       <%= yield %>
     </div>
+
+    <!-- Footer -->
+<footer class="page-footer font-small dark">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> BlogMaipo.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
   </body>
 </html>
