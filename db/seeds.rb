@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #AdminUser.create!(email: 'adminpablo@example.com', password: '123456', password_confirmation: '123456') if Rails.env.development?
 
-Post.destroy_all
-User.destroy_all
+# Post.destroy_all
+# User.destroy_all
 # 10.times do |i|
 #   u = User.create!(name: "User #{i}", email: "Email#{i}@gmail.com", password: "123456")
 #   p = Post.create!(title: "Post #{i}", body: "Contenido #{i}", user: u)
