@@ -1,5 +1,7 @@
-<%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
+<%= javascript_include_tag "https://www.google.com/jsapi" %>
 
-<% my_chart =Post.group_by_day(:created_at).count %>
+<%# javascript_include_tag "application", "chartkick" %>
+
+<% my_chart =Comment.group(:title).count %>
 
 <%= column_chart my_chart %>

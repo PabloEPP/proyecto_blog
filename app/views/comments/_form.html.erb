@@ -1,4 +1,6 @@
-<%= form_for([@post, @post.comments.build]) do |f| %>
+<h5>Ingresa tu comentario:</h5>
+
+<%= form_with(model:[@post, @post.comments.build]) do |f| %>
 	<%= f.label :name %><br>
 	<%= f.text_field :name %><br>
 	<br>
